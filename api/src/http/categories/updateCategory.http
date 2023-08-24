@@ -1,0 +1,5 @@
+PUT /api/categories/64e500447e721ef625fde2f2 HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+
+{"name":"work"}

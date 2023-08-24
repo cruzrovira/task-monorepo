@@ -1,0 +1,4 @@
+DELETE /api/categories/64e6f62858650c3ad83f9446 HTTP/1.1
+Host: localhost:3000
+
+

@@ -109,5 +109,6 @@
     "paths": {
       "@/*": ["./src/*"]
     }
-  }
+  },
+  "include": ["src", "../.eslintrc.js"]
 }

@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
+import { Router } from "express"
+
 import {
   addTask,
   deleteTaskById,
@@ -5,7 +8,6 @@ import {
   getTasks,
   updateTaskById,
 } from "@/controllers/task.controller"
-import { Router } from "express"
 const taskRouter = Router()
 
 taskRouter.get("/", getTasks)

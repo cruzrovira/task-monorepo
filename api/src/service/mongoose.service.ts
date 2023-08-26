@@ -4,7 +4,7 @@ const URL =
     ? `mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@clustertasks.duosd3h.mongodb.net/${process.env.MONGO_DB_NAME}?retryWrites=true&w=majority`
     : `mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@clustertasks.duosd3h.mongodb.net/${process.env.MONGO_DB_NAME_DEV}?retryWrites=true&w=majority`
 
-const initialConnectDB = () => {
+const initialConnectDB = (): void => {
   connect(URL)
     .then(data => {
       const name = data.connections[0].name

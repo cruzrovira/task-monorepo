@@ -1,5 +1,6 @@
-import { Category } from "@/models/category.model"
 import { Schema, model } from "mongoose"
+
+import { Category } from "@/models/category.model"
 const TaskSchema = new Schema({
   title: { type: String, required: true },
   completed: { type: Boolean, default: false },
@@ -9,7 +10,7 @@ const TaskSchema = new Schema({
 TaskSchema.pre("findOneAndDelete", async function (next) {
   const task = await this.model.findOne(this.getQuery())
   const category = await Category.findById(task.category)
-  category &&
+  category != null &&
     (category.tasks = category.tasks.filter(
       t => t.toString() !== task._id.toString(),
     ))

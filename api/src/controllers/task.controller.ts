@@ -1,20 +1,21 @@
+import { type Request, type Response } from "express"
+
 import { Category } from "@/models/category.model"
 import { Task } from "@/models/task.model"
-import { Request, Response } from "express"
 
-const addTask = async (req: Request, res: Response) => {
+const addTask = async (req: Request, res: Response): Promise<void> => {
   const { title, completed, categoryId } = req.body
   try {
     const category = await Category.findById(categoryId)
 
     const newTask = new Task({
-      title: title,
+      title,
       completed: Boolean(completed),
       category: category?._id,
     })
 
     await newTask.save()
-    category && (category.tasks = category.tasks.concat(newTask._id))
+    category != null && (category.tasks = category.tasks.concat(newTask._id))
     await category?.save()
 
     res.status(201).json(newTask)
@@ -23,7 +24,7 @@ const addTask = async (req: Request, res: Response) => {
   }
 }
 
-const getTasks = async (req: Request, res: Response) => {
+const getTasks = async (req: Request, res: Response): Promise<void> => {
   try {
     const tasks = await Task.find({}).populate("category", "name")
     res.status(200).json(tasks)
@@ -31,7 +32,7 @@ const getTasks = async (req: Request, res: Response) => {
     res.status(400).json(error)
   }
 }
-const getTaskById = async (req: Request, res: Response) => {
+const getTaskById = async (req: Request, res: Response): Promise<void> => {
   const { id } = req.params
   try {
     const task = await Task.findById(id).populate("category", "name")
@@ -42,7 +43,7 @@ const getTaskById = async (req: Request, res: Response) => {
   }
 }
 
-const deleteTaskById = async (req: Request, res: Response) => {
+const deleteTaskById = async (req: Request, res: Response): Promise<void> => {
   const { id } = req.params
   try {
     const task = await Task.findByIdAndDelete(id)
@@ -53,7 +54,7 @@ const deleteTaskById = async (req: Request, res: Response) => {
   }
 }
 
-const updateTaskById = async (req: Request, res: Response) => {
+const updateTaskById = async (req: Request, res: Response): Promise<void> => {
   const { id } = req.params
   const { title, completed, categoryId } = req.body
   try {
@@ -61,7 +62,7 @@ const updateTaskById = async (req: Request, res: Response) => {
     const task = await Task.findByIdAndUpdate(
       id,
       {
-        title: title,
+        title,
         completed: Boolean(completed),
         category: category?._id,
       },

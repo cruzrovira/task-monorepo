@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
+import { Router } from "express"
+
 import {
   addCategory,
   deleteCategoryById,
@@ -5,7 +8,6 @@ import {
   getCategoryById,
   updateCategory,
 } from "@/controllers/category.controller"
-import { Router } from "express"
 const routerCategories = Router()
 
 routerCategories.get("/", getCategories)

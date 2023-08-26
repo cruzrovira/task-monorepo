@@ -1,7 +1,8 @@
-import { Request, Response } from "express"
+import { type Request, type Response } from "express"
+
 import { Category } from "../models/category.model"
 
-const addCategory = async (req: Request, res: Response) => {
+const addCategory = async (req: Request, res: Response): Promise<void> => {
   const { name } = req.body
   try {
     const category = new Category({ name })
@@ -12,7 +13,7 @@ const addCategory = async (req: Request, res: Response) => {
   }
 }
 
-const getCategories = async (req: Request, res: Response) => {
+const getCategories = async (req: Request, res: Response): Promise<void> => {
   try {
     const categories = await Category.find({}).populate(
       "tasks",
@@ -25,7 +26,7 @@ const getCategories = async (req: Request, res: Response) => {
   }
 }
 
-const getCategoryById = async (req: Request, res: Response) => {
+const getCategoryById = async (req: Request, res: Response): Promise<void> => {
   const { id } = req.params
   try {
     const category = await Category.findById(id).populate(
@@ -39,7 +40,7 @@ const getCategoryById = async (req: Request, res: Response) => {
   }
 }
 
-const updateCategory = async (req: Request, res: Response) => {
+const updateCategory = async (req: Request, res: Response): Promise<void> => {
   const { id } = req.params
   const { name } = req.body
   try {
@@ -55,7 +56,10 @@ const updateCategory = async (req: Request, res: Response) => {
   }
 }
 
-const deleteCategoryById = async (req: Request, res: Response) => {
+const deleteCategoryById = async (
+  req: Request,
+  res: Response,
+): Promise<void> => {
   const { id } = req.params
   try {
     const category = await Category.findByIdAndDelete(id)

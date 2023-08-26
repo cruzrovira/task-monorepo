@@ -1,11 +1,11 @@
-import { Router } from "express"
 import {
   addCategory,
   deleteCategoryById,
   getCategories,
   getCategoryById,
   updateCategory,
-} from "../controllers/category.controller"
+} from "@/controllers/category.controller"
+import { Router } from "express"
 const routerCategories = Router()
 
 routerCategories.get("/", getCategories)

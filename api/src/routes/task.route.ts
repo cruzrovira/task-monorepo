@@ -1,11 +1,11 @@
-import { Router } from "express"
 import {
   addTask,
   deleteTaskById,
   getTaskById,
   getTasks,
   updateTaskById,
-} from "../controllers/task.controller"
+} from "@/controllers/task.controller"
+import { Router } from "express"
 const taskRouter = Router()
 
 taskRouter.get("/", getTasks)

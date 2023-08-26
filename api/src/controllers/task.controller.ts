@@ -1,6 +1,6 @@
+import { Category } from "@/models/category.model"
+import { Task } from "@/models/task.model"
 import { Request, Response } from "express"
-import { Category } from "../models/category.model"
-import { Task } from "../models/task.model"
 
 const addTask = async (req: Request, res: Response) => {
   const { title, completed, categoryId } = req.body

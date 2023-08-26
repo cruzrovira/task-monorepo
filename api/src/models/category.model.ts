@@ -1,5 +1,5 @@
+import { Task } from "@/models/task.model"
 import { Schema, model } from "mongoose"
-import { Task } from "./task.model"
 const CategorySchema = new Schema({
   name: { type: String, required: true },
   tasks: [{ type: Schema.Types.ObjectId, ref: "Task" }],

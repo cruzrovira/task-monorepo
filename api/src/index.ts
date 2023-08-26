@@ -1,5 +1,6 @@
-import cors from "cors"
 import "dotenv/config"
+
+import cors from "cors"
 import express, { Response } from "express"
 import { connection } from "mongoose"
 import morgan from "morgan"

@@ -1,5 +1,5 @@
+import { Category } from "@/models/category.model"
 import { Schema, model } from "mongoose"
-import { Category } from "./category.model"
 const TaskSchema = new Schema({
   title: { type: String, required: true },
   completed: { type: Boolean, default: false },

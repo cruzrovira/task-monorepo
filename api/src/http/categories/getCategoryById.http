@@ -1,3 +1,3 @@
-GET /api/categories/64e500447e721ef625fde2f2 HTTP/1.1
+GET /api/categories/64eaab90d8c67fa0d45f2fea HTTP/1.1
 Host: localhost:3000
 

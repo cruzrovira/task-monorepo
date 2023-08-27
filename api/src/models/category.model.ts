@@ -1,7 +1,9 @@
 import { Schema, model } from "mongoose"
 
 import { Task } from "@/models/task.model"
-const CategorySchema = new Schema({
+import { type ICategory } from "@/types/category.type"
+
+const CategorySchema = new Schema<ICategory>({
   name: { type: String, required: true },
   tasks: [{ type: Schema.Types.ObjectId, ref: "Task" }],
 })
@@ -20,6 +22,6 @@ CategorySchema.set("toJSON", {
   },
 })
 
-const Category = model("Category", CategorySchema)
+const Category = model<ICategory>("Category", CategorySchema)
 
 export { Category }

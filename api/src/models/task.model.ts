@@ -1,7 +1,9 @@
 import { Schema, model } from "mongoose"
 
 import { Category } from "@/models/category.model"
-const TaskSchema = new Schema({
+import { type ITask } from "@/types/task.type"
+
+const TaskSchema = new Schema<ITask>({
   title: { type: String, required: true },
   completed: { type: Boolean, default: false },
   category: { type: Schema.Types.ObjectId, ref: "Category" },
@@ -25,6 +27,6 @@ TaskSchema.set("toJSON", {
     delete ret.__v
   },
 })
-const Task = model("Task", TaskSchema)
+const Task = model<ITask>("Task", TaskSchema)
 
 export { Task }

@@ -1,5 +1,6 @@
 POST /api/categories HTTP/1.1
 Host: localhost:3000
 Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNydXpyb3ZpcmFAZ21haWwuY29tIiwiaWF0IjoxNjkzNTMyNzEwLCJleHAiOjE2OTQxMzc1MTB9.sRpPrmHrY8OnM4UhXHkB4T_zg0wJjIlYmyFiWJ4PQvw
 
-{"name":"Work3"}
+{"name":"Home"}

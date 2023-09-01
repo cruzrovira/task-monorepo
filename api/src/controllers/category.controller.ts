@@ -1,6 +1,6 @@
 import { type Request, type Response } from "express"
 
-import { Category } from "../models/category.model"
+import { Category } from "@/models/category.model"
 
 const addCategory = async (req: Request, res: Response): Promise<void> => {
   const { name } = req.body

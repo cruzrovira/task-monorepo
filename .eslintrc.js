@@ -13,6 +13,7 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
+    "@typescript-eslint/no-misused-promises": "off",
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "react/jsx-sort-props": [

@@ -1,9 +1,10 @@
 POST /api/task HTTP/1.1
 Host: localhost:3000
 content-type: application/json
-
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNydXpyb3ZpcmFAZ21haWwuY29tIiwiaWF0IjoxNjkzNTMyNzEwLCJleHAiOjE2OTQxMzc1MTB9.sRpPrmHrY8OnM4UhXHkB4T_zg0wJjIlYmyFiWJ4PQvw
 {
 "title":"create web web",
 "completed":false,
-"categoryId":"64e7070d43d7a069166a36ac"
+"categoryId":"64eec253fd47ec2a97f13766",
+"userId" :"64eec50efd47ec2a97f1376d"
 }

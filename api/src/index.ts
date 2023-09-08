@@ -11,16 +11,16 @@ import routerCategories from "@/routes/category.route"
 import taskRouter from "@/routes/task.route"
 import userRouter from "@/routes/user.router"
 import { initialConnectDB } from "@/service/mongoose.service"
-
 const app = express()
 app.use(cors())
 app.use(express.json())
 app.use(morgan("dev"))
+
 app.disable("x-powered-by")
 
 initialConnectDB()
 
-app.use("/api/categories", routerCategories)
+app.use("/api/categories", authMiddleware, routerCategories)
 app.use("/api/task", authMiddleware, taskRouter)
 app.use("/api/user", authMiddleware, userRouter)
 app.use("/api/auth", authRouter)

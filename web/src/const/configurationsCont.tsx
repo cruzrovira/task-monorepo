@@ -8,4 +8,8 @@ export const APP_CONST = {
     MESSAGING_SENDER_ID: "689967620544",
     APP_ID: "1:689967620544:web:ec384e56d1ae45a4d3e825",
   },
+  API_URL: {
+    AUTH_LOGIN: "/api/auth/login",
+    AUTH_VERIFY_TOKEN: "/api/auth/verify/token",
+  },
 }

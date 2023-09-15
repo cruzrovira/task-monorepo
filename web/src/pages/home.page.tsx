@@ -1,7 +1,8 @@
 import LayoutPage from "@/layout/layoutPage"
 import React from "react"
 type props = {}
-const Home: React.FC<props> = ({}) => {
+const HomePage: React.FC<props> = ({}) => {
+  console.log("home")
   return (
     <LayoutPage>
       <h1>home</h1>
@@ -9,4 +10,4 @@ const Home: React.FC<props> = ({}) => {
   )
 }
 
-export default Home
+export default HomePage

@@ -1,7 +1,8 @@
 import { Router } from "express"
 
-import { login } from "@/controllers/auth.controller"
+import { login, verifyToken } from "@/controllers/auth.controller"
 const authRouter = Router()
 
 authRouter.post("/login", login)
+authRouter.post("/verify/token", verifyToken)
 export { authRouter }

@@ -10,9 +10,9 @@ import {
 const routerCategories = Router()
 
 routerCategories.get("/", getCategories)
-routerCategories.get("/:id", getCategoryById)
+routerCategories.get("/id/:id", getCategoryById)
 routerCategories.post("/", addCategory)
-routerCategories.put("/:id", updateCategory)
-routerCategories.delete("/:id", deleteCategoryById)
+routerCategories.put("/id/:id", updateCategory)
+routerCategories.delete("/id/:id", deleteCategoryById)
 
 export default routerCategories

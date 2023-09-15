@@ -1,4 +1,4 @@
-PUT /api/categories/64e7070d43d7a069166a36ac HTTP/1.1
+PUT /api/categories/id/64e7070d43d7a069166a36ac HTTP/1.1
 Host: localhost:3000
 Content-Type: application/json
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNydXpyb3ZpcmFAZ21haWwuY29tIiwiaWF0IjoxNjkzNTMyNzEwLCJleHAiOjE2OTQxMzc1MTB9.sRpPrmHrY8OnM4UhXHkB4T_zg0wJjIlYmyFiWJ4PQvw

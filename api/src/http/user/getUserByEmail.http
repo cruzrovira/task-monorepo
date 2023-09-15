@@ -1,0 +1,4 @@
+GET /api/user/email/cruzrovira@gmail.com HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNydXpyb3ZpcmFAZ21haWwuY29tIiwiaWQiOiI2NTAxZTM1Zjc3OTJmMGExMWE0NjdkOTEiLCJpYXQiOjE2OTQ3MDk5NjcsImV4cCI6MTY5NTMxNDc2N30.dCHKdqi-1L9T9lNaRZp280phjRsdVex1WU-a7YxVCws
+Host: localhost:3000
+

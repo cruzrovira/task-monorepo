@@ -1,4 +1,4 @@
-PUT /api/user/64eec50efd47ec2a97f1376d HTTP/1.1
+PUT /api/user/id/64eec50efd47ec2a97f1376d HTTP/1.1
 Host: localhost:3000
 Content-Type: application/json
 Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNydXpyb3ZpcmFAZ21haWwuY29tIiwiaWF0IjoxNjkzNTMyNzEwLCJleHAiOjE2OTQxMzc1MTB9.sRpPrmHrY8OnM4UhXHkB4T_zg0wJjIlYmyFiWJ4PQvw

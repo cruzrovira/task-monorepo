@@ -40,6 +40,20 @@ const getTasks = async (req: Request, res: Response): Promise<void> => {
     res.status(400).json(error)
   }
 }
+
+const getTasksByIdUser = async (req: Request, res: Response): Promise<void> => {
+  const { idUser } = req.params
+  try {
+    const tasks = await Task.find({ user: idUser })
+      .populate("category", "name -_id")
+      .populate("user", "name email picture -_id")
+
+    res.status(200).json(tasks)
+  } catch (error) {
+    res.status(400).json(error)
+  }
+}
+
 const getTaskById = async (req: Request, res: Response): Promise<void> => {
   const { id } = req.params
   try {
@@ -87,4 +101,11 @@ const updateTaskById = async (req: Request, res: Response): Promise<void> => {
   }
 }
 
-export { addTask, deleteTaskById, getTaskById, getTasks, updateTaskById }
+export {
+  addTask,
+  deleteTaskById,
+  getTaskById,
+  getTasks,
+  getTasksByIdUser,
+  updateTaskById,
+}

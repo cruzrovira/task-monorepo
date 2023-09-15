@@ -1,0 +1,4 @@
+POST /api/auth/verify/token HTTP/1.1
+Host: localhost:3000
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNydXpyb3ZpcmFAZ21haWwuY29tIiwiaWQiOiI2NTAxZTM1Zjc3OTJmMGExMWE0NjdkOTEiLCJpYXQiOjE2OTQ3MjE2NjMsImV4cCI6MTY5NTMyNjQ2M30.uJZWwIzsdxv2KZKqt-DD1sCM2lEga3fQhmZepYBzDRw
+# 

@@ -3,6 +3,7 @@ import { Router } from "express"
 import {
   addUser,
   deleteUserById,
+  getUserByEmail,
   getUserById,
   getUsers,
   updateUserById,
@@ -10,9 +11,10 @@ import {
 
 const userRouter = Router()
 userRouter.get("/", getUsers)
-userRouter.get("/:id", getUserById)
+userRouter.get("/id/:id", getUserById)
+userRouter.get("/email/:email", getUserByEmail)
 userRouter.post("/", addUser)
-userRouter.delete("/:id", deleteUserById)
-userRouter.put("/:id", updateUserById)
+userRouter.delete("/id/:id", deleteUserById)
+userRouter.put("/id/:id", updateUserById)
 
 export default userRouter

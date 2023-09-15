@@ -34,6 +34,19 @@ const getUserById = async (req: Request, res: Response): Promise<void> => {
   }
 }
 
+const getUserByEmail = async (req: Request, res: Response): Promise<void> => {
+  const { email } = req.params
+  try {
+    const user = await User.findOne({ email }).populate(
+      "tasks",
+      "title completed -_id",
+    )
+    res.status(200).json(user)
+  } catch (error) {
+    res.status(400).json(error)
+  }
+}
+
 const deleteUserById = async (req: Request, res: Response): Promise<void> => {
   const { id } = req.params
   try {
@@ -61,4 +74,11 @@ const updateUserById = async (req: Request, res: Response): Promise<void> => {
   }
 }
 
-export { addUser, deleteUserById, getUserById, getUsers, updateUserById }
+export {
+  addUser,
+  deleteUserById,
+  getUserByEmail,
+  getUserById,
+  getUsers,
+  updateUserById,
+}
